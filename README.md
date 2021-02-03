@@ -1,0 +1,1 @@
+This landing page was made in business purpose of LaRedoute for applicants for the vacancy of an SMM manager.

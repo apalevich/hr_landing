@@ -29,8 +29,10 @@
                     text-shadow: var(--color-shadows);
                     line-height: 48px;
                     font-weight: 900;
+                    margin-bottom: 26px;
                 }
-                .description {
+                .subheading-text {
+                    margin-bottom: 37px;
                 }
                 .text-small {
                     font-size: 13px;
@@ -42,14 +44,12 @@
                     font-weight: 700;
                 }
                 .subheading-block {
-                    /* width: 100%; */
                     background-color: black;
                     color: white;
-                    padding: 15px;
-                    /* margin-right: 15px; */
+                    padding: 10px 11px;
                     width: calc(100% - 30px);
                     font-size: 15px;
-                    /* font-weight: 700; */
+                    font-weight: 700;
                     line-height: 18px;
                     box-shadow: var(--color-shadows);
                 }
@@ -58,30 +58,24 @@
                     padding: 0;
                     font-weight: 700;
                     font-size: 15px;
-                }
-                .image-main {
-                    width: calc(100vw - 30px);
-                    /* width: 200px; */
-                    height: 0;
-                    padding-top: 150%;
-                    background-image: url('/img/tiktok1.png');
-                    background-repeat: no-repeat;
+                    margin-bottom: 27px;
                 }
                 .image {
                     display: block;
                     -moz-box-sizing: border-box;
                     box-sizing: border-box;
                     background: black no-repeat;
-                    /* width: calc(100vw - 30px); Width of new image */
-                    /* height: 492px; Height of new image */
-                    /* padding-left: 277px; Equal to width of new image */
+                    margin-bottom: 26px;
+                }
+                ul {
+                    list-style: none;
                 }
                 .ul-common {
-                    list-style: none;
                     padding-left: 21px;
                 }
                 .li-common {
                     position: relative;
+                    margin-bottom: 40px;
                 }
                 .li-common::before {
                     position: absolute;
@@ -102,22 +96,76 @@
                 .li-common:nth-of-type(3n+3)::before {
                     background-color: #000000
                 }
-                
+                .ul-bullet-blue {
+                    padding-left: 0px;
+                    margin: 0;
+                }
+                .li-bullet-blue::before {
+                    content: '•';
+                    color: #00F7EF;
+                    display: block;
+                    float: left;
+                    width: 8px;
+                }
+                .ul-bullet-heart {
+                    padding-left: 0;
+                }
+                .li-bullet-heart:not(:last-child) {
+                    margin-bottom: 17px;
+                }
+                .li-bullet-heart::before{
+                    content: '❤';
+                    color: #FF0051;
+                    display: block;
+                    width: 16px;
+                    float: left;
+                }
+                .applicant-form {
+                    margin-top: 41px;
+                }
+                .applicant-form__input {
+                    border: 0px;
+                    border-radius: 0px;
+                    background-color: rgba(0,247,239,0.16);
+                    width: 100%;
+                    height: 51px;
+                    padding: 14px;
+                    margin-bottom: 8px;
+                }
+                .applicant-form__input:last-of-type {
+                    margin-bottom: 16px;
+                }
+                .applicant-form__input::placeholder {
+                    font-style: italic;
+                }
+                .applicant-form__button {
+                    width: 100%;
+                    padding: 12px 30px;
+                    border: 1px solid #191919;
+                    color: #fff;
+                    background-color: black;
+                    font-weight: 600;
+                    cursor: pointer;
+                }
             </style>
             <div>
                 <h2 class="heading">Ищешь работу мечты?<br>Это легко</h2>
             </div>
             <div class="description">
-                <p class="text-small">Если ты яркий, креативный энтузиаст, который проводит в ТикТоке большую часть свободного времени — тебе понравится наша вакансия <b>SMM&#8209;специалиста по ведению TIK TOK</b></p>
-                <p class="text-medium"><b>40 000 руб в месяц</b> до вычета налогов</p>
+                <div class="subheading-text">
+                    <p class="text-small">Если ты яркий, креативный энтузиаст, который проводит в ТикТоке большую часть свободного времени — тебе понравится наша вакансия <b>SMM&#8209;специалиста по ведению TIK TOK</b></p>
+                    <p class="text-medium"><b>40 000 руб в месяц</b> до вычета налогов</p>
+                </div>
                 <div class="subheading-block">Наши идеальные условия:</div>
                 <ul class="ul-conditions"> 
                     <li>Опыт работы: не требуется</li>
                     <li>Частичная занятость</li>
                     <li>Удалённая работа</li>
                 </ul>
-                <!-- <div class="image-main"></div> -->
-                <img src="/img/tiktok1@2x.png" alt="Скриншот из приложеня TikTok" class="image" width="100%">
+                <picture>
+                    <source srcset="/img/tiktok1@2x.png 2x">
+                    <img src="/img/tiktok1.png" alt="Скриншот из приложеня TikTok" class="image" width="100%">
+                </picture>
             </div>
             <div>
                 <ul class="ul-common text-small">
@@ -127,51 +175,51 @@
                     </li>
                     <li class="li-common">
                         <h4>Основные обязанности:</h4>
-                        <ul>
-                            <li>Создание контента</li>
-                            <li>Организация съемок контента (людей, времени и места)</li>
-                            <li>Анализ эффективности контента</li>
-                            <li>Мониторинг активности конкурентов</li>
-                            <li>Подбор блогеров для сотрудничества</li>
-                            <li>Контроль и мониторинг продвижения роликов</li>
+                        <ul class="ul-bullet-blue">
+                            <li class="li-bullet-blue">Создание контента</li>
+                            <li class="li-bullet-blue">Организация съемок контента (людей, времени и места)</li>
+                            <li class="li-bullet-blue">Анализ эффективности контента</li>
+                            <li class="li-bullet-blue">Мониторинг активности конкурентов</li>
+                            <li class="li-bullet-blue">Подбор блогеров для сотрудничества</li>
+                            <li class="li-bullet-blue">Контроль и мониторинг продвижения роликов</li>
                         </ul>
                     </li>
                     <li class="li-common">
                         <h4>Требования:</h4>
-                        <ul>
-                            <li>Личные достижения в TIK TOK по количеству подписчиков и/или просмотров</li>
-                            <li>Организованность!</li>
-                            <li>Общительность, открытость новому, креатив</li>
-                            <li>Фанатизм по TikTok, понимание трендов</li>
-                            <li>Обучаемость</li>
-                            <li>Готовность принять участие в съемках в качестве блогера</li>
+                        <ul class="ul-bullet-blue">
+                            <li class="li-bullet-blue">Личные достижения в TIK TOK по количеству подписчиков и/или просмотров</li>
+                            <li class="li-bullet-blue">Организованность!</li>
+                            <li class="li-bullet-blue">Общительность, открытость новому, креатив</li>
+                            <li class="li-bullet-blue">Фанатизм по TikTok, понимание трендов</li>
+                            <li class="li-bullet-blue">Обучаемость</li>
+                            <li class="li-bullet-blue">Готовность принять участие в съемках в качестве блогера</li>
                         </ul>    
                     </li>
                     <li class="li-common">
                         <h4>Ключевые навыки</h4>
-                        <ul>
-                            <li>Креативность</li>
-                            <li>Контроль качества</li>
-                            <li>Работа с блогерами</li>
-                        </ul>    
+                        <p>
+                            Креативность<br>
+                            Контроль качества<br>
+                            Работа с блогерами
+                        </p>    
                     </li>
                     <li class="li-common">
                         <h4>Условия:</h4>
-                        <ul>
-                            <li>Удаленная работа, с необходимостью посещать офис и шоурум 2 раза в неделю (м. Чистые пруды)</li>
-                            <li>Гибкий график работы, но ты можешь понадобиться в любое время в рабочие дни с 10:00 до 19:00</li>
-                            <li>Возможность участия в кадре</li>
+                        <ul class="ul-bullet-heart">
+                            <li class="li-bullet-heart">Удаленная работа, с необходимостью посещать офис и шоурум 2 раза в неделю (м. Чистые пруды)</li>
+                            <li class="li-bullet-heart">Гибкий график работы, но ты можешь понадобиться в любое время в рабочие дни с 10:00 до 19:00</li>
+                            <li class="li-bullet-heart">Возможность участия в кадре</li>
                         </ul>
                     </li>
                     <li class="li-common">
                         <h4>В ответ на вакансию просьба выполнить небольшое задание:</h4>
                         <p>Запиши видео, почему хочешь работать в La Redoutе и укажи ссылку на видео в анкете.</p>
-                        <form>
-                            <input type="text" placeholder="Имя и Фамилия">
-                            <input type="text" placeholder="Электронный адрес">
-                            <input type="text" placeholder="Твой аккаунт в TikTok">
-                            <input type="text" placeholder="Ссылка на видео">
-                            <button type="button">Отправить</button>
+                        <form class="applicant-form">
+                            <input type="text" placeholder="Имя и Фамилия" class="applicant-form__input">
+                            <input type="text" placeholder="Электронный адрес" class="applicant-form__input">
+                            <input type="text" placeholder="Твой аккаунт в TikTok" class="applicant-form__input">
+                            <input type="text" placeholder="Ссылка на видео" class="applicant-form__input">
+                            <button type="button" class="applicant-form__button">Отправить</button>
                         </form>
                     </li>
                 </ul>

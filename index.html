@@ -22,6 +22,7 @@
                 }
                 .static-page-container {
                     padding: 0 15px;
+                    max-width: 1066px;
                 }
                 .heading {
                     font-size: 48px;
@@ -48,7 +49,7 @@
                     color: white;
                     padding: 10px 11px;
                     width: calc(100% - 30px);
-                    font-size: 15px;
+                    /* font-size: 15px; */
                     font-weight: 700;
                     line-height: 18px;
                     box-shadow: var(--color-shadows);
@@ -57,7 +58,6 @@
                     list-style: none;
                     padding: 0;
                     font-weight: 700;
-                    font-size: 15px;
                     margin-bottom: 27px;
                 }
                 .image {
@@ -84,7 +84,6 @@
                     height: 100%;
                     /* background-color: blue; */
                     content: '';
-                    border-color: red;
                     /* padding-left: 10px; */
                 }
                 .li-common:nth-of-type(3n+1)::before {
@@ -147,27 +146,82 @@
                     font-weight: 600;
                     cursor: pointer;
                 }
+                @media screen and (min-width: 960px) {
+                    :root {
+                        --color-shadows: -5px -5px 0px rgba(0,247,239,1), 5px 6px 0px rgba(255,0,81,1);
+                    }
+                    .heading {
+                        font-size: 68px;
+                        line-height: 65px;
+                    }
+                    .text-small {
+                        font-size: 24px;
+                    }
+                    .text-medium {
+                        font-size: 30px;
+                    }
+                    .description-container {
+                        display: grid;
+                        grid-template-columns: 317px auto;
+                    }
+                    .description-item:nth-of-type(2) {
+                        order: 1;
+                    }
+                    .description-item:nth-of-type(1) {
+                        order: 2;
+                        margin-left: 39px;
+                    }
+                    .image {
+                        max-width: 317px
+                    }
+                    .subheading-block {
+                        max-width: 568px;
+                        line-height: 30px;
+                        padding: 13px 22px;
+                    }
+                    .ul-common {
+                        max-width: 636px;
+                        padding-left: 57px;
+                    }
+                    .li-common {
+                        /* margin-left: -57px; */
+                    }
+                    .li-common::before {
+                        width: 36px;
+                        margin-left: -57px;
+                    }
+                    .ul-common-container {
+                        width: 100%;
+                        background: url(/img/tiktok2.png), url(/img/tiktok3.png), url(/img/tiktok4.png), url(/img/tiktok5.png);
+                        background-repeat: no-repeat;
+                        background-position: right 0%, right 25%, right 50%, right 75%;
+                    }
+                }
             </style>
             <div>
                 <h2 class="heading">Ищешь работу мечты?<br>Это легко</h2>
             </div>
-            <div class="description">
-                <div class="subheading-text">
-                    <p class="text-small">Если ты яркий, креативный энтузиаст, который проводит в ТикТоке большую часть свободного времени — тебе понравится наша вакансия <b>SMM&#8209;специалиста по ведению TIK TOK</b></p>
-                    <p class="text-medium"><b>40 000 руб в месяц</b> до вычета налогов</p>
+            <div class="description-container">
+                <div class="description-item">
+                    <div class="subheading-text">
+                        <p class="text-small">Если ты яркий, креативный энтузиаст, который проводит в ТикТоке большую часть свободного времени — тебе понравится наша вакансия <b>SMM&#8209;специалиста по ведению TIK TOK</b></p>
+                        <p class="text-medium"><b>40 000 руб в месяц</b> до вычета налогов</p>
+                    </div>
+                    <div class="subheading-block text-medium">Наши идеальные условия:</div>
+                    <ul class="ul-conditions text-medium"> 
+                        <li>Опыт работы: не требуется</li>
+                        <li>Частичная занятость</li>
+                        <li>Удалённая работа</li>
+                    </ul>
                 </div>
-                <div class="subheading-block">Наши идеальные условия:</div>
-                <ul class="ul-conditions"> 
-                    <li>Опыт работы: не требуется</li>
-                    <li>Частичная занятость</li>
-                    <li>Удалённая работа</li>
-                </ul>
-                <picture>
-                    <source srcset="/img/tiktok1@2x.png 2x">
-                    <img src="/img/tiktok1.png" alt="Скриншот из приложеня TikTok" class="image" width="100%">
-                </picture>
+                <div class="description-item">
+                    <picture>
+                        <source srcset="/img/tiktok1@2x.png 2x">
+                        <img src="/img/tiktok1.png" alt="Скриншот из приложеня TikTok" class="image" width="100%">
+                    </picture>
+                </div>
             </div>
-            <div>
+            <div class="ul-common-container">
                 <ul class="ul-common text-small">
                     <li class="li-common">
                         <h4>Главная задача:</h4>

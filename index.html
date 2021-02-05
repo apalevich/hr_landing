@@ -146,7 +146,7 @@
                     font-weight: 600;
                     cursor: pointer;
                 }
-                @media screen and (min-width: 960px) {
+                @media screen and (min-width: 670px) {
                     :root {
                         --color-shadows: -5px -5px 0px rgba(0,247,239,1), 5px 6px 0px rgba(255,0,81,1);
                     }
@@ -156,6 +156,7 @@
                     }
                     .text-small {
                         font-size: 24px;
+                        /* line-height: 32px; */
                     }
                     .text-medium {
                         font-size: 30px;
@@ -180,11 +181,12 @@
                         padding: 13px 22px;
                     }
                     .ul-common {
+                        width: calc(100% - 374px);
                         max-width: 636px;
                         padding-left: 57px;
                     }
                     .li-common {
-                        /* margin-left: -57px; */
+                        margin-bottom: 72px;
                     }
                     .li-common::before {
                         width: 36px;
@@ -192,9 +194,34 @@
                     }
                     .ul-common-container {
                         width: 100%;
-                        background: url(/img/tiktok2.png), url(/img/tiktok3.png), url(/img/tiktok4.png), url(/img/tiktok5.png);
+                        background: url(/img/tiktok2@2x.png), url(/img/tiktok3@2x.png), url(/img/tiktok4@2x.png), url(/img/tiktok5@2x.png);
                         background-repeat: no-repeat;
-                        background-position: right 0%, right 25%, right 50%, right 75%;
+                        background-position: right 0%, right 33.3%, right 66.6%, right 100%;
+                        background-size: 317px 563px;
+                    }
+                    
+                    .li-bullet-blue::before {
+                        width: 14px;
+                    }
+                    .li-bullet-heart:not(:last-child) {
+                        margin-bottom: 43px;
+                    }
+                    .li-bullet-heart::before {
+                        width: 30px;
+                    }
+                    .applicant-form {
+                        margin: 30px 0;
+                    }
+                    .applicant-form__input {
+                        height: 97px;
+                        padding: 37px 25px;
+                        margin-bottom: 39px;
+                    }
+                    .applicant-form__input:last-of-type {
+                        margin-bottom: 59px;
+                    }
+                    .applicant-form__button {
+                        height: 90px;
                     }
                 }
             </style>
@@ -269,11 +296,11 @@
                         <h4>В ответ на вакансию просьба выполнить небольшое задание:</h4>
                         <p>Запиши видео, почему хочешь работать в La Redoutе и укажи ссылку на видео в анкете.</p>
                         <form class="applicant-form">
-                            <input type="text" placeholder="Имя и Фамилия" class="applicant-form__input">
-                            <input type="text" placeholder="Электронный адрес" class="applicant-form__input">
-                            <input type="text" placeholder="Твой аккаунт в TikTok" class="applicant-form__input">
-                            <input type="text" placeholder="Ссылка на видео" class="applicant-form__input">
-                            <button type="button" class="applicant-form__button">Отправить</button>
+                            <input type="text" placeholder="Имя и Фамилия" class="applicant-form__input text-small">
+                            <input type="text" placeholder="Электронный адрес" class="applicant-form__input text-small">
+                            <input type="text" placeholder="Твой аккаунт в TikTok" class="applicant-form__input text-small">
+                            <input type="text" placeholder="Ссылка на видео" class="applicant-form__input text-small">
+                            <button type="button" class="applicant-form__button text-small">Отправить</button>
                         </form>
                     </li>
                 </ul>

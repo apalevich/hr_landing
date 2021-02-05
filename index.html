@@ -13,6 +13,7 @@
         </style>
     </head>
     <body>
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <div class="static-page-container">
 
@@ -194,7 +195,7 @@
                     }
                     .ul-common-container {
                         width: 100%;
-                        background: url(/img/tiktok2@2x.png), url(/img/tiktok3@2x.png), url(/img/tiktok4@2x.png), url(/img/tiktok5@2x.png);
+                        background: url(https://cdn.laredoute.com/repository/sites/12/ru-RU/staticpages/tiktok_needed/tiktok2_2x.png), url(https://cdn.laredoute.com/repository/sites/12/ru-RU/staticpages/tiktok_needed/tiktok3_2x.png), url(https://cdn.laredoute.com/repository/sites/12/ru-RU/staticpages/tiktok_needed/tiktok4_2x.png), url(https://cdn.laredoute.com/repository/sites/12/ru-RU/staticpages/tiktok_needed/tiktok5_2x.png);
                         background-repeat: no-repeat;
                         background-position: right 0%, right 33.3%, right 66.6%, right 100%;
                         background-size: 317px 563px;
@@ -243,8 +244,8 @@
                 </div>
                 <div class="description-item">
                     <picture>
-                        <source srcset="/img/tiktok1@2x.png 2x">
-                        <img src="/img/tiktok1.png" alt="Скриншот из приложеня TikTok" class="image" width="100%">
+                        <source srcset="https://cdn.laredoute.com/repository/sites/12/ru-RU/staticpages/tiktok_needed/tiktok1_2x.png 2x">
+                        <img src="https://cdn.laredoute.com/repository/sites/12/ru-RU/staticpages/tiktok_needed/tiktok1.png" alt="Скриншот из приложеня TikTok" class="image" width="100%">
                     </picture>
                 </div>
             </div>
@@ -296,16 +297,43 @@
                         <h4>В ответ на вакансию просьба выполнить небольшое задание:</h4>
                         <p>Запиши видео, почему хочешь работать в La Redoutе и укажи ссылку на видео в анкете.</p>
                         <form class="applicant-form">
-                            <input type="text" placeholder="Имя и Фамилия" class="applicant-form__input text-small">
-                            <input type="text" placeholder="Электронный адрес" class="applicant-form__input text-small">
-                            <input type="text" placeholder="Твой аккаунт в TikTok" class="applicant-form__input text-small">
-                            <input type="text" placeholder="Ссылка на видео" class="applicant-form__input text-small">
-                            <button type="button" class="applicant-form__button text-small">Отправить</button>
+                            <input type="text" placeholder="Имя и Фамилия" class="applicant-form__input text-small" id="applicant-form__input__name">
+                            <input type="text" placeholder="Электронный адрес" class="applicant-form__input text-small" id="applicant-form__input__email">
+                            <input type="text" placeholder="Твой аккаунт в TikTok" class="applicant-form__input text-small" id="applicant-form__input__profile">
+                            <input type="text" placeholder="Ссылка на видео" class="applicant-form__input text-small" id="applicant-form__input__link">
+                            <button type="button" class="applicant-form__button text-small" id="#Send">Отправить</button>
                         </form>
                     </li>
                 </ul>
             </div>
-
         </div>
+        <script>
+            $(document).ready(function(){
+                // Отправка формы
+                $('.applicant-form__button').on('click', function () {
+                    $('.applicant-form').addClass('loading');
+                    var data = {
+                        Name: $('#applicant-form__input__name').val(),
+                        Mail: $('#applicant-form__input__email').val(),
+                        Phone: $('#applicant-form__input__profile').val(),
+                        Comment: $('#applicant-form__input__link').val(),
+                    }
+                    $.ajax({
+                        type: 'POST',
+                        data: JSON.stringify(data),
+                        url: 'https://www.laredoute.su:8443/handlers/business/tiktokapplications',
+                        success: function (data) {
+                            $('.applicant-form').html('<p class="text-center text-black">Сообщение успешно отправлено. Оператор обработает его в ближайшее время.</p>');
+                            $('.applicant-form').removeClass('loading');
+                        },
+                        error: function () {
+                            $('.applicant-form').html('<p class="text-center text-black">К сожалению, не удалось отправить сообщение. Пожалуйста, попробуйте свяжитесь с нами по email: <a class="link" href="mailto:ekaterina.zhovnerchuk@laredoute.ru">ekaterina.zhovnerchuk@laredoute.ru</a></p>');
+                            $('.applicant-form').removeClass('loading');
+                        }
+                    });
+                });
+            })
+        </script>
+
     </body>
 </html>
